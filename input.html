@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPUT 태그 실습</title>
+</head>
+<body>
+    <p>HELLO</p>
+    <p>KYUNG-BOK</p>
+    HELLO<br>
+    KYUNG-BOK
+    <p>USER ID: <input type="text" name="id" maxlength="8" size="8"></p>
+    <p>USER PW: <input type="password" name="pw" maxlength="8" size="8"></p>
+
+    <p><input type="radio" name="gender1">male</p>
+    <p><input type="radio" name="gender1">female</p>
+    //radio 태그 사용시 name값은 동일하게작성.
+
+    <p><input type="radio" name="gender2">male
+        <input type="radio" name="gender2">female</p>
+
+    <p><input type="checkbox" name="hobby1">영화감상
+        <input type="checkbox" name="hobby2">사진촬영
+        <input type="checkbox" name="hobby3">음악감상
+        <input type="checkbox" name="hobby4">운동</p>
+    //checkbox 태그 사용시 name값은 모두 다르게작성.
+
+    <p><input type="number" name="cart" value="3" min="3" max="5"></p>
+    
+    <p><input type="color" name="mycolor" value="#CEF279"></p>
+
+    <p><input type="button" onclick="alert('안녕하세요. 아이디를 입력해주세요')" value="click!"></p>
+
+    <p><input type="date" name="date1" max="2023-06-30" min="2023-01-01"></p>
+    <p><input type="date" name="maxdate" max="1979-12-31"></p>
+    <p><input type="date" name="mindate" min="2023-01-01"></p>
+
+    <p><input type="range" name="points" min="0" max="10" value="8"></p>
+
+    <p><input type="month" name="month_year"></p> //년과 월 선택
+    <p><input type="week" name="week_year"></p> //년과 주 선택
+    <p><input type="time" name="usr_time"></p> //시간 선택
+
+    <p><input type="email"><br>//이메일 유효성 검사</p>
+    <p><input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+        <br>//전화번호 유효성검사</p>
+    <p><input type="text" size="3" maxlength="3"> &nbsp;&nbsp;-&nbsp;&nbsp;
+        <input type="text" size="4" maxlength="4"> &nbsp;&nbsp;-&nbsp;&nbsp;
+        <input type="text" size="4" maxlength="4">
+    </p>
+
+    <p><input type="search" size="20" maxlength="30">
+        <input type="button" value="SEARCH"></p>
+    
+</body>
+</html>
