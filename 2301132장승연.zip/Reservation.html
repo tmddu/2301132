@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <style>
+      ul {word-spacing: 40px;}
+        .large-text {
+          font-size: 50px;
+        }
+        .image-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .circle-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 10px;
+      overflow: hidden;
+    }
+    
+    .circle-image img {
+      width: 100%;
+      height: auto;
+    }
+        #map {
+            height: 400px;
+            width: 100%;
+          }
+          ul {word-spacing: 40px;} .thin-text {
+      font-weight: 200; 
+    } 
+    .small-text {
+      font-size: 10px;
+    }
+
+    p {
+      margin-bottom: 30px; /* 글 사이 간격 설정 */
+    }
+
+      </style>
+        <title> Reservation</title>
+        <script>
+          function makeReservation() {
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+      
+            // 예약 정보 확인
+            var confirmation = "날짜: " + date + "\n시간: " + time + "\n이름: " + name + "\n이메일: " + email +"\n전화번호: " + number;
+      
+            // 확인 메시지 표시
+            alert("예약이 완료되었습니다.\n\n" + confirmation);
+          }
+        </script>
+       
+
+</head>
+<body>
+  <p align="center"><a href="index.html"><img src="sc logo.png"></a></p>
+
+    <p align="center" class="large-text"> ONE DAY CLASS</p>
+
+    <div class="image-container">
+      <div class="circle-image">
+        <img src="class 1.jpeg" alt="사진 1">
+      </div>
+      <div class="circle-image">
+        <img src="class 2.jpeg" alt="사진 2">
+      </div> 
+     </div>
+   <p align="center"> "소수정예로 가르치는 꼼꼼한 수업을 듣고 나만의 아름다운 그림을 그려보세요."</p>
+    <h1>Location</h1>
+  <div id="map"></div>
+
+  <script src="script.js"></script>
+
+  <script>
+    function initMap() {
+      // 서울특별시 좌표
+      var seoul = { lat: 37.5665, lng: 126.9780 };
+
+      // 지도 생성
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: seoul,
+        zoom: 12
+      });
+      
+      // 마커 추가
+      var marker = new google.maps.Marker({
+        position: seoul,
+        map: map,
+        title: '서울특별시'
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRsaxXqV5qczqrKTpDjCMUeOQNdAMti6o&callback=initMap" async defer></script>
+  
+
+    <h2>Reservation now</h2>
+
+    <form id="reservationForm">
+      <label for="name">이름:</label>
+      <input type="text" id="name" required><br><br>
+      
+      <label for="date">날짜:</label>
+      <input type="date" id="date" required max="2023-12-31" min="2023-06-15"><br><br>
+      
+      
+      <label for="time">시간:</label>
+      <select id="time" required>
+        <option value="" disabled selected>시간 선택</option> 
+        <script>
+          var select = document.getElementById("time");
+          var time = new Date();
+          time.setHours(10, 0, 0); // 시작 시간 설정 (오전 10시)
+          
+          while (time.getHours() < 20) { // 종료 시간 설정 (오후 8시)
+            var option = document.createElement("option");
+            option.text = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            option.value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            select.add(option);
+            
+            time.setMinutes(time.getMinutes() + 30); // 30분 단위로 증가
+          }
+        </script>
+      </select><br><br>
+      <label for="email">이메일:</label>
+      <input type="email" id="email" required><br><br>
+
+      <label for="number">전화번호:</label>
+      <input type="text" id="number" required><br><br>
+
+      <input type="submit" value="예약하기">
+    </form> 
+    <hr color="gray" size="0.01" width="100%">
+
+    <footer>
+      <ul>
+         <p align="center" class="thin-text small-text"> 회사명:(주)SC 주소:서울특별시 이메일:seungyean108@naver.com 전화:010-1234-5678 월~금:10:00-20:00 토,일:10:00-18:00</p>
+             
+      </ul>
+   </footer>
+    
+     
+</body>
+
+</html>

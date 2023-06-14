@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY</title>
+
+    <style>
+        ul {word-spacing: 40px;}
+
+        .photo-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .photo-container img {
+      width: 300px;
+      height: auto;
+      margin-right: 20px; /* 사진 간격 설정 */
+    }
+    /* 마지막 사진의 오른쪽 간격 제거 */
+    .photo-container img:last-child {
+      margin-right: 0;
+    }
+    
+    p {
+      margin-bottom: 30px; /* 글 사이 간격 설정 */
+    }
+    </style>
+</head>
+<body>
+    <p align="center"><a href="index.html"><img src="sc logo.png"></a></p>
+    <nav>
+        <ul>
+            <p align="center"><a href="GALLERY.html">GALLERY</a>
+            
+            <a href="Reservation.html">Reservation</a></p>
+        </ul>
+    </nav>
+
+    <div class="photo-container">
+        <img src="GALLERY 1.jpeg" alt="사진 1">
+        <img src="GALLERY 2.jpeg" alt="사진 2">
+        <img src="GALLERY 3.jpeg" alt="사진 3">
+        <img src="GALLERY 4.jpeg" alt="사진 4">
+        <img src="GALLERY 5.jpeg" alt="사진 5">
+        <img src="GALLERY 6.jpeg" alt="사진 6">
+        <img src="GALLERY 7.jpeg" alt="사진 7">
+        <img src="GALLERY 8.jpeg" alt="사진 8">
+      </div>
+
+      <hr color="gray" size="0.01" width="100%">
+</body>
+</html>
